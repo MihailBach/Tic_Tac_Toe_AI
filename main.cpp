@@ -1,6 +1,15 @@
+
 #include <iostream>
+#include "board.h"
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    board x;
+    std::cout << "Welcome to Tic-Tac-Toe" << std::endl;
+    while(x.winSituation()){
+        x.choose_mark();
+        x.print_board();
+        x.write_to_board();
+        x.switch_mark();
+    }
     return 0;
 }

@@ -4,16 +4,22 @@
 
 #ifndef TIC_TAC_TOE_AI_PLAYER_H
 #define TIC_TAC_TOE_AI_PLAYER_H
-
+#include <string>
 
 class Player {
 public:
-    void choice(int choicex, int choicey);
-    char mark(char mark);
+    Player();
+    void set_choice();
+    void switch_mark();
+    int get_choice();
+    char get_mark();
+    void choose_mark();
+    std::string get_prev_choices();
+
 private:
-    char m_player_mark;
-    int m_choicex;
-    int m_choicey;
+    char m_player_mark = 't';
+    int m_choice;
+    std::string prev_choices;
 };
 
 
