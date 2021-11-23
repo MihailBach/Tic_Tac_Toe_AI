@@ -1,3 +1,0 @@
-D:/projects/2nd year/module 2/Tic_Tac_Toe_AI/cmake-build-debug/CMakeFiles/Tic_Tac_Toe_AI.dir
-D:/projects/2nd year/module 2/Tic_Tac_Toe_AI/cmake-build-debug/CMakeFiles/edit_cache.dir
-D:/projects/2nd year/module 2/Tic_Tac_Toe_AI/cmake-build-debug/CMakeFiles/rebuild_cache.dir
