@@ -1,9 +1,6 @@
+#include <iostream>
 
-// Created by Misho on 23-Nov-21.
-//
 int main() {
-
-  //Your code... Or someone elses, doesn't really matter.
-
-  return 0;
+    std::cout << "Hello, World!" << std::endl;
+    return 0;
 }
