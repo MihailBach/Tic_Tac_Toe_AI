@@ -128,14 +128,3 @@ bool board::winSituation() {
     }
 }
 
-bool board::get_is_game_on() {
-    return this->is_game_on;
-}
-
-void board::set_is_game_on() {
-    if(this->is_game_on) {
-        is_game_on = false;
-    }
-        is_game_on = true;
-}
-

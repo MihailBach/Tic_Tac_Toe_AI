@@ -42,10 +42,10 @@ char Player::get_mark() {
 }
 
 void Player::choose_mark() {
-
     while (m_player_mark != 'x' && m_player_mark != 'o'){
         std::cout << "Please choose X or O: " <<std::endl;
         std::cin >> m_player_mark;
+        m_player_mark = tolower(m_player_mark);
     }
 }
 

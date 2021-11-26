@@ -14,9 +14,6 @@ public:
     board();
     void write_to_board();
     bool winSituation();
-    bool get_is_game_on();
-    void set_is_game_on();
-
 private:
     //std::vector<std::vector<char>> square;
     char square[3][3] =
@@ -25,7 +22,6 @@ private:
                     {'4','5','6'},
                     {'7','8','9'},
             };
-    bool is_game_on = true;
 };
 
 
