@@ -20,7 +20,6 @@ void board::print_board() {
 }
 
 void board::get_square() {
-
     for (int i = 0; i < 3; ++i) {
         for (int j = 0; j < 3; ++j) {
             if (winSituation()) {
@@ -65,6 +64,41 @@ bool board::winSituation() {
         return false;
     }
     else if (square[0][2] == 'x' && square[1][1] == 'x' && square[2][0] == 'x'){
+        std::cout << "You win\n";
+        return false;
+    }
+
+    if (square[0][0] == 'o' && square[0][1] == 'o' && square[0][2] == 'o') {
+        std::cout << "You win\n";
+        return false;
+    }
+    else if (square[1][0] == 'o' && square[1][1] == 'o' && square[1][2] == 'o'){
+        std::cout << "You win\n";
+        return false;
+    }
+    else if (square[2][0] == 'o' && square[2][1] == 'o' && square[2][2] == 'o'){
+        std::cout << "You win\n";
+        return false;
+    }
+
+    else if (square[0][0] == 'o' && square[1][0] == 'o' && square[2][0] == 'o'){
+        std::cout << "You win\n";
+        return false;
+    }
+    else if (square[0][1] == 'o' && square[1][1] == 'o' && square[2][1] == 'o'){
+        std::cout << "You win\n";
+        return false;
+    }
+    else if (square[0][2] == 'o' && square[1][2] == 'o' && square[2][2] == 'o'){
+        std::cout << "You win\n";
+        return false;
+    }
+
+    else if (square[0][0] == 'o' && square[1][1] == 'o' && square[2][2] == 'o'){
+        std::cout << "You win\n";
+        return false;
+    }
+    else if (square[0][2] == 'o' && square[1][1] == 'o' && square[2][0] == 'o'){
         std::cout << "You win\n";
         return false;
     }
