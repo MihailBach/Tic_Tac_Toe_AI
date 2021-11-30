@@ -3,4 +3,4 @@ project(Tic_Tac_Toe_Ai2)
 
 set(CMAKE_CXX_STANDARD 23)
 
-add_executable(Tic_Tac_Toe_AI main.cpp Player.cpp Player.h board.cpp board.h)
+add_executable(Tic_Tac_Toe_AI main.cpp Player.cpp Player.h board.cpp board.h AI.cpp AI.h)

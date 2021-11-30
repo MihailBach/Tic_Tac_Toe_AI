@@ -10,8 +10,8 @@
 
 class board : public Player{
 public:
-    void print_board();
     board();
+    void print_board();
     void write_to_board();
     bool winSituation();
 private:

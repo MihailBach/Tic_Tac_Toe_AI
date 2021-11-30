@@ -30,85 +30,181 @@ void board::write_to_board() {
 bool board::winSituation() {
     if (square[0][0] == 'x' && square[0][1] == 'x' && square[0][2] == 'x') {
         std::cout << "x wins\n";
+        if(this->get_opp_mark() == 'x'){
+            this->value = value + 10;
+        }
+        else{
+            this->value = value - 10;
+        }
         return false;
     }
     else if (square[1][0] == 'x' && square[1][1] == 'x' && square[1][2] == 'x'){
         print_board();
         std::cout << "x wins\n";
+        if(this->get_opp_mark() == 'x'){
+            this->value = value + 10;
+        }
+        else{
+            this->value = value - 10;
+        }
         return false;
     }
     else if (square[2][0] == 'x' && square[2][1] == 'x' && square[2][2] == 'x'){
         print_board();
         std::cout << "x wins\n";
+        if(this->get_opp_mark() == 'x'){
+            this->value = value + 10;
+        }
+        else{
+            this->value = value - 10;
+        }
         return false;
     }
 
     else if (square[0][0] == 'x' && square[1][0] == 'x' && square[2][0] == 'x'){
         print_board();
         std::cout << "x wins\n";
+        if(this->get_opp_mark() == 'x'){
+            this->value = value + 10;
+        }
+        else{
+            this->value = value - 10;
+        }
         return false;
     }
     else if (square[0][1] == 'x' && square[1][1] == 'x' && square[2][1] == 'x'){
         print_board();
         std::cout << "x wins\n";
+        if(this->get_opp_mark() == 'x'){
+            this->value = value + 10;
+        }
+        else{
+            this->value = value - 10;
+        }
         return false;
     }
     else if (square[0][2] == 'x' && square[1][2] == 'x' && square[2][2] == 'x'){
         print_board();
         std::cout << "x wins\n";
+        if(this->get_opp_mark() == 'x'){
+            this->value = value + 10;
+        }
+        else{
+            this->value = value - 10;
+        }
         return false;
     }
 
     else if (square[0][0] == 'x' && square[1][1] == 'x' && square[2][2] == 'x'){
         print_board();
         std::cout << "x wins\n";
+        if(this->get_opp_mark() == 'x'){
+            this->value = value + 10;
+        }
+        else{
+            this->value = value - 10;
+        }
         return false;
     }
     else if (square[0][2] == 'x' && square[1][1] == 'x' && square[2][0] == 'x'){
         print_board();
         std::cout << "x wins\n";
+        if(this->get_opp_mark() == 'x'){
+            this->value = value + 10;
+        }
+        else{
+            this->value = value - 10;
+        }
         return false;
     }
     else if (square[0][0] == 'o' && square[0][1] == 'o' && square[0][2] == 'o') {
         print_board();
         std::cout << "o wins\n";
+        if(this->get_opp_mark() == 'o'){
+            this->value = value + 10;
+        }
+        else{
+            this->value = value - 10;
+        }
         return false;
     }
     else if (square[1][0] == 'o' && square[1][1] == 'o' && square[1][2] == 'o'){
         print_board();
         std::cout << "o wins\n";
+        if(this->get_opp_mark() == 'o'){
+            this->value = value + 10;
+        }
+        else{
+            this->value = value - 10;
+        }
         return false;
     }
     else if (square[2][0] == 'o' && square[2][1] == 'o' && square[2][2] == 'o'){
         print_board();
         std::cout << "o wins\n";
+        if(this->get_opp_mark() == 'o'){
+            this->value = value + 10;
+        }
+        else{
+            this->value = value - 10;
+        }
         return false;
     }
 
     else if (square[0][0] == 'o' && square[1][0] == 'o' && square[2][0] == 'o'){
         print_board();
         std::cout << "o wins\n";
+        if(this->get_opp_mark() == 'o'){
+            this->value = value + 10;
+        }
+        else{
+            this->value = value - 10;
+        }
         return false;
     }
     else if (square[0][1] == 'o' && square[1][1] == 'o' && square[2][1] == 'o'){
         print_board();
         std::cout << "o wins\n";
+        if(this->get_opp_mark() == 'o'){
+            this->value = value + 10;
+        }
+        else{
+            this->value = value - 10;
+        }
         return false;
     }
     else if (square[0][2] == 'o' && square[1][2] == 'o' && square[2][2] == 'o'){
         print_board();
         std::cout << "o wins\n";
+        if(this->get_opp_mark() == 'o'){
+            this->value = value + 10;
+        }
+        else{
+            this->value = value - 10;
+        }
         return false;
     }
 
     else if (square[0][0] == 'o' && square[1][1] == 'o' && square[2][2] == 'o'){
         print_board();
         std::cout << "o wins\n";
+        if(this->get_opp_mark() == 'o'){
+            this->value = value + 10;
+        }
+        else{
+            this->value = value - 10;
+        }
         return false;
     }
     else if (square[0][2] == 'o' && square[1][1] == 'o' && square[2][0] == 'o'){
         print_board();
         std::cout << "o wins\n";
+        if(this->get_opp_mark() == 'o'){
+            this->value = value + 10;
+        }
+        else{
+            this->value = value - 10;
+        }
         return false;
     }
     else {
@@ -123,6 +219,7 @@ bool board::winSituation() {
         if(tie == 9){
             std::cout << "you tied!" << std::endl;
             print_board();
+            this->value = 0;
             return false;
         }
     }

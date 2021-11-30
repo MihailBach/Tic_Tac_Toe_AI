@@ -11,5 +11,6 @@ int main() {
         x.write_to_board();
         x.switch_mark();
     }
+    std::cout << x.getValue() <<std::endl;
     return 0;
 }
