@@ -12,6 +12,7 @@ Player::Player() {
     this->m_choice = get_choice();
     this->prev_choices = get_prev_choices();
 }
+
 void Player::switch_mark() {
     if (m_player_mark == 'o'){
         m_player_mark = 'x';
@@ -21,14 +22,11 @@ void Player::switch_mark() {
     }
 }
 
-void Player::set_choice(int num = 0) {
-        this->m_choice = num;
-}
-int Player:: get_choice(){
+int Player:: get_choice() const{
     return this->m_choice;
 }
 
-char Player::get_mark() {
+char Player::get_mark() const {
     return this->m_player_mark;
 }
 
@@ -46,7 +44,7 @@ void Player::choose_mark() {
     }
 }
 
-std::string Player::get_prev_choices() {
+std::string& Player::get_prev_choices() {
     return prev_choices;
 }
 

@@ -11,11 +11,14 @@
 class board : public Player{
 public:
     board();
+    char** get_square();
     void print_board();
+    void undo_move(int);
     void write_to_board();
+    void write_to_board(int);
     bool winSituation();
+    bool emptyCell(int,int);
 private:
-    //std::vector<std::vector<char>> square;
     char square[3][3] =
             {
                     {'1','2','3'},

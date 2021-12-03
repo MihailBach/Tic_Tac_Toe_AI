@@ -9,8 +9,9 @@ int main() {
         x.choose_mark();
         x.print_board();
         x.write_to_board();
+        std::cout << x.minimax(x, 1, true) <<std::endl;
         x.switch_mark();
+
     }
-    std::cout << x.getValue() <<std::endl;
     return 0;
 }
