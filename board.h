@@ -11,11 +11,12 @@
 class board : public Player{
 public:
     board();
-    char** get_square();
+    char check_square(int, int);
+    bool isMoveLeft();
     void print_board();
     void undo_move(int);
     void write_to_board();
-    void write_to_board(int);
+    void write_to_board(int, char);
     bool winSituation();
     bool emptyCell(int,int);
 private:

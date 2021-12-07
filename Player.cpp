@@ -13,15 +13,6 @@ Player::Player() {
     this->prev_choices = get_prev_choices();
 }
 
-void Player::switch_mark() {
-    if (m_player_mark == 'o'){
-        m_player_mark = 'x';
-    }
-    else{
-        m_player_mark = 'o';
-    }
-}
-
 int Player:: get_choice() const{
     return this->m_choice;
 }

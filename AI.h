@@ -9,10 +9,11 @@ class board;
 
 class AI{
 public:
-    int minimax(board&, int, bool);
-    int getValue();
     int evaluate(board&);
-    void bestMove(board&);
+    int minimax(board&, int, bool);
+    AI();
+    int getValue();
+    int bestMove(board&);
 protected:
     int depth;
     int value;
