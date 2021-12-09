@@ -10,14 +10,8 @@ class board;
 class AI{
 public:
     int evaluate(board&);
-    int minimax(board&, int, bool);
-    AI();
-    int getValue();
+    int minimax(board&, int,int,int, bool);
     int bestMove(board&);
-protected:
-    int depth;
-    int value;
-
 };
 
 

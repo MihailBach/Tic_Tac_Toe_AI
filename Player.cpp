@@ -48,6 +48,7 @@ void Player::set_choice() {
         std::cout << "Please input a correct number" << std::endl;
         std::cin >> temp;
     }
+    //add the move to the list with previous moves
     prev_choices = prev_choices + temp;
     this->m_choice = std::stoi(&temp);
 

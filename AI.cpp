@@ -4,9 +4,9 @@
 
 #include <iostream>
 #include "AI.h"
-#include  "board.h"
+#include "board.h"
 
-int AI::minimax(board& b, int depth, bool isMax) {
+int AI::minimax(board& b, int depth,int alpha, int beta, bool isMax) {
     int score = evaluate(b);
     //if Maximizer wins
     if (score == 10) {
@@ -18,7 +18,7 @@ int AI::minimax(board& b, int depth, bool isMax) {
     }
     //if it's a tie return 0
     if(!b.isMoveLeft()){
-        return 4;   //BIG BODGE
+        return 4;
     }
     //if it's maximizer's turn
     if (isMax) {
@@ -29,16 +29,21 @@ int AI::minimax(board& b, int depth, bool isMax) {
                     //do the move
                     b.write_to_board(i * 3 + j, b.get_opp_mark());
                     // choose best move
-                    score = minimax(b, depth+1, !isMax);
+                    score = minimax(b, depth+1,alpha,beta, !isMax);
                     bestScore = std::max(bestScore, score);
+                    //alpha beta pruning
+                    alpha = std::max(alpha, score);
                     //undo move
                     b.undo_move(i * 3 + j);
+                    //check if this move is best
+                    if (beta <= alpha){
+                        return bestScore;
+                    }
                 }
             }
         }
         return bestScore;
     } else {
-        //b.switch_mark();
         int bestScore = 10000;
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
@@ -46,10 +51,16 @@ int AI::minimax(board& b, int depth, bool isMax) {
                     //do the move
                     b.write_to_board((i * 3 + j), b.get_mark());
                     // choose best move
-                    score = minimax(b, depth+1, !isMax);
+                    score = minimax(b, depth+1,alpha,beta, !isMax);
                     bestScore = std::min(bestScore, score);
+                    //rewrite beta
+                    beta = std::min(beta, score);
                     //undo move
                     b.undo_move(i * 3 + j);
+                    //check if this move is best
+                    if(beta<=alpha){
+                        return bestScore;
+                    }
                 }
             }
         }
@@ -61,29 +72,22 @@ int AI::minimax(board& b, int depth, bool isMax) {
 
 int AI::bestMove(board &b) {
     int bestVal = 0;
-    int cord = 0;
+    int bestMove = 0;
     for (int i = 0; i < 3; ++i) {
         for (int j = 0; j < 3; ++j) {
             if(b.emptyCell(i,j)){
                 b.write_to_board(i*3+j, b.get_opp_mark());
-                int moveVal = b.minimax(b, 0, false);
+                int moveVal = b.minimax(b, 0,-1000000,1000000, false);
                 b.undo_move(i*3+j);
                 if(moveVal > bestVal){
-                    //b.switch_mark();
-                    //b.write_to_board(i*3+j ,b.get_opp_mark());
-                    std::cout <<"Best move is: "<< "x: " << i << " y: " <<j << std::endl;
-                    cord = i*3+j;
+                    bestMove = i*3+j;
                 }
             }
         }
     }
-    return cord;
+    return bestMove;
 }
 
-AI::AI() {
-    this->value = 1;
-    this->depth = 0;
-}
 
 int AI::evaluate(board & b) {
         // Checking for Rows for X or O victory.
